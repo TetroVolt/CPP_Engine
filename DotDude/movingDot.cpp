@@ -1,6 +1,5 @@
 #include "SDL/SDL.h"
 #include <string>
-#include <curses.h>
 #include <iostream>
 
 #define KEY_UP_ 72
@@ -51,24 +50,7 @@ void closeRefs(){
 }
 
 char getUserInput(){
-  int c;
-  switch(c = getch() ){
-    case KEY_UP_:
-      dotDudeY--;
-      break;
-    case KEY_DOWN_:
-      dotDudeY++;
-      break;
-    case KEY_RIGHT_:
-      dotDudeX++;
-      break;
-    case KEY_LEFT_:
-      dotDudeX--;
-      break;
-    case 'x':
-      closeRefs();
-      break;
-  }
+  
 }
 
 int main(int argc, char * args[] ){
