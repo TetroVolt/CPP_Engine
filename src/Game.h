@@ -3,14 +3,16 @@
 
 #include <iostream>
 
-using namespace std;
-
 class Game {
 private:
-  long int
+  bool isRunning = true;
 public:
   Game();
   void run();
+  void getUserInput();
+  void updateGameState();
+  void render();
+  bool is_Running(){ return isRunning; }
 };
 
 #endif
