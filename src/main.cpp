@@ -5,8 +5,10 @@
 using namespace std;
 
 int main(int argc, char ** argv){
+  
   Game *game = new Game();
   //Game game;
-  game.run();
+  game -> run();
   free(game);
+
 }
