@@ -2,6 +2,7 @@
 #define GAME_H
 
 #include <iostream>
+#include "SDL/SDL.h"
 
 class Game {
 private:
