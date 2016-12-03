@@ -7,6 +7,7 @@
 class Game {
 private:
   bool isRunning = true;
+  SDL_KeyboardEvent *eventList;
 public:
   Game();
   void run();
@@ -14,6 +15,8 @@ public:
   void updateGameState();
   void render();
   bool is_Running(){ return isRunning; }
+  void setup();
+  void quit();
 };
 
 #endif
