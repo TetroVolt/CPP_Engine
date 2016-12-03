@@ -13,7 +13,7 @@ Game::Game(){
 void Game::setup(){
   cout << "Setting up" << endl;
 
-  Game::eventList = new SDL_KeyboardEvent[4];
+  Game::eventList = new SDL_KeyboardEvent[EVENT_POLL_SIZE];
 }
 
 //Run function
@@ -55,7 +55,7 @@ void Game::quit(){
 }
 
 void Game::getUserInput(){
-  //cout << "Inside getUserInput() function" << endl;
+
 }
 void Game::updateGameState(){
   //cout << "Inside updateGameState() function" << endl;

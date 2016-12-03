@@ -1,8 +1,13 @@
+#ifndef EVENT_POLL_SIZE
+  #define EVENT_POLL_SIZE 4
+#endif
+
 #ifndef GAME_H
 #define GAME_H
 
 #include <iostream>
 #include "SDL/SDL.h"
+#include "KeyHandler.h"
 
 class Game {
 private:
