@@ -8,6 +8,7 @@
 #include <iostream>
 #include "SDL/SDL.h"
 #include "KeyHandler.h"
+#include "Renderer.h"
 
 class Game {
 private:
