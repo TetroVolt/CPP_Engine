@@ -19,11 +19,11 @@ void Game::run(){
   unsigned long int frames = 0;
 
   while (is_Running()){
-    end_time += 10;
+    end_time += 5;
     delta = end_time - start_time;
-    nanoSecs += delta;
 
     if (delta >= nanoSecPerFrame){
+      nanoSecs += delta;
       { //Run a frame
       getUserInput();
       updateGameState();
@@ -31,7 +31,6 @@ void Game::run(){
       }
       start_time = end_time;
       frames++;
-
     }
 
     if (nanoSecs >= 1000000000ul){

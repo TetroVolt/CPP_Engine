@@ -4,11 +4,9 @@
 
 using namespace std;
 
-int main(int argc, char ** argv){
-  
+int main(){
   Game *game = new Game();
   //Game game;
   game -> run();
   free(game);
-
 }
