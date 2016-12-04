@@ -1,13 +1,31 @@
 #define minsize 10
 
+class GameObj {
+private:
+  int age;
+public:
+  GameObj(int a){
+    age = a;
+  }
+  int getNum(){
+    return age;
+  }
+};
+
+
 class RKGC{
 private:
-  long unsigned int * heap1;
-  long unsigned int * heap2;
-  long unsigned int * heap3;
-  int size = 0, actualsize = minsize;
+  //represents the first level of objects
+  GameObj * heap1;
+  //second level
+  GameObj * heap2;
+  //third and final level
+  GameObj * heap3;
 
-  void doubleSize(){
+  //size of each individuap heal for easy access
+  const int heap1Size = 10, heap2Size = 25, heap3Size = 50;
+
+  /*void doubleSize(){
     long unsigned int * OBJ2 = ;
     for (int i = 0; i < actualsize; ++i){
       (OBJ2 + i)->(OBJ + i);
@@ -17,15 +35,24 @@ private:
     }
     actualsize *= 2;
   }
-  bool reachedCapacity(){
-    return size == actualsize - 1;
+  */
+  bool heap1Full(){
+    return false;
+  }
+  bool heap2Full(){
+    return false;
+  }
+  bool heap3Full(){
+    return false;
   }
 public:
   RKGC(unsigned int minbytes, unsigned int min2bytes, unsigned int maxbytes){
-    OBJ = (long unsigned int*)malloc(sizeof(long unsigned int ) * 10);
+    //OBJ = (GameObj*)malloc(sizeof(GameObj ) * 10);
   }
-  int insert(GameObject inObj){
-    if(reachedCapacity())return 1;
+  /*void insert(GameObj inObj){
+    if(heap1Full(){
+      handleHeap1();
+    }
     void *temp = OBJ;
     int count = 0;
     while(*temp != NULL){
@@ -34,33 +61,12 @@ public:
     }
     OBJ[count] = inObj;
   }
+  */
 };
 
-class Person {
-private:
-  int age;
-public:
-  Person(int a){
-    age = a;
-  }
-  int getNum(){
-    return age;
-  }
-};
-
-
-void * getPerson(){
-  Person p = new Person(5);
-
-  return p;
-}
 
 
 int main(){
-  Person * p = (Person *)getPerson();
-  cout
-  << "p.getNum(): "
-  << (p)->getNum()
-  << endl;
+
   return 0;
 }
