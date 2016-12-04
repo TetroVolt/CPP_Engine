@@ -24,7 +24,7 @@ void Game::run(){
   unsigned long int nanoSecs = 0;
   unsigned long int frames = 0;
 
-  while (is_Running()){
+  while ( is_Running() ){
     end_time += 10;
     delta = end_time - start_time;
 
@@ -47,15 +47,26 @@ void Game::run(){
       nanoSecs = 0;
     }
   }
+  quit();
 
 }
 
 void Game::quit(){
   free(eventList);
+  cleanup();
+}
+void stopRunning(){
+  Game::isRunning = false;
 }
 
 void Game::getUserInput(){
 
+}
+void Game::handleUserInput(){
+  for(int i = 0; i < EVENT_POLL_SIZE; i++){
+    if(eventList[i] == NULL) break;
+    if(eventList[i])
+  }
 }
 void Game::updateGameState(){
   //cout << "Inside updateGameState() function" << endl;

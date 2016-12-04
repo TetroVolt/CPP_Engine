@@ -23,6 +23,8 @@ public:
   bool is_Running(){ return isRunning; }
   void setup();
   void quit();
+  void stopRunning();
+  void handleUserInput();
 };
 
 #endif
