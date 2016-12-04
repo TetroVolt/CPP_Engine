@@ -4,8 +4,8 @@ class GameObj {
 private:
   int age;
 public:
-  GameObj(int a){
-    age = a;
+  GameObj(){
+
   }
   int getNum(){
     return age;
@@ -23,7 +23,7 @@ private:
   GameObj * heap3;
 
   //size of each individuap heal for easy access
-  const int heap1Size = 10, heap2Size = 25, heap3Size = 50;
+   unsigned int heap1Size, heap2Size, heap3Size;
 
   /*void doubleSize(){
     long unsigned int * OBJ2 = ;
@@ -37,7 +37,14 @@ private:
   }
   */
   bool heap1Full(){
-    return false;
+    GameObj *temp = &heap1[0];
+    if(temp==NULL)return false;
+
+    while(temp != NULL){
+      if(temp == NULL)
+        return false;
+    }
+    return true;
   }
   bool heap2Full(){
     return false;
@@ -45,23 +52,30 @@ private:
   bool heap3Full(){
     return false;
   }
+  void handleHeap1(){
+
+  }
 public:
   RKGC(unsigned int minbytes, unsigned int min2bytes, unsigned int maxbytes){
-    //OBJ = (GameObj*)malloc(sizeof(GameObj ) * 10);
+    heap1Size = minbytes; heap2Size = min2bytes;  heap3Size = maxbytes;
+    heap1 = new GameObj[heap1Size];
+    heap2 = new GameObj[heap2Size];
+    heap3 = new GameObj[heap3Size];
+  //  heap2
   }
-  /*void insert(GameObj inObj){
-    if(heap1Full(){
+  void insert(GameObj inObj){
+    if(heap1Full()){
       handleHeap1();
     }
-    void *temp = OBJ;
+    GameObj *temp = heap1;
     int count = 0;
-    while(*temp != NULL){
+    while(temp != NULL){
       temp++;
       count++;
     }
-    OBJ[count] = inObj;
+    heap1[count] = inObj;
   }
-  */
+
 };
 
 
