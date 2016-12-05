@@ -1,28 +1,11 @@
 #include <iostream>
+
+#include "src/oop/GameObj.h"
+#include "src/oop/GameObj.cpp"
+
 #define minsize 10
 
-
-
 using namespace std;
-
-class GameObj {
-protected:
-  bool Reffed;
-public:
-  GameObj(){
-    cout << "GameObj being instantiated." << endl;
-  }
-  bool hasRef(){ return Reffed; }
-  void setRef(bool ref){ Reffed = ref; }
-
-  void tick(){}
-  void render(){}
-
-  ~GameObj(){
-    //Handle anything that needs to be destroyed
-    cout << "Game Object being deleted." << endl;
-  }
-};
 
 
 class Player: public GameObj {
@@ -147,7 +130,7 @@ int main(){
   player->jump();
   cout << player << endl;
   free(player);
-  cout << player == NULL << endl;
+  cout << (player == NULL) << endl;
 
   //On the stack
   //Player player;
