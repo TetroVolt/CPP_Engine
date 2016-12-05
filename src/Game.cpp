@@ -7,7 +7,13 @@ using namespace std;
 
 //Constructor
 Game::Game(){
+  setup();
+}
 
+void Game::setup(){
+  cout << "Setting up" << endl;
+
+  Game::eventList = new SDL_KeyboardEvent[EVENT_POLL_SIZE];
 }
 
 //Run function
@@ -18,16 +24,17 @@ void Game::run(){
   unsigned long int nanoSecs = 0;
   unsigned long int frames = 0;
 
-  while (is_Running()){
-    end_time += 5;
+  while ( is_Running() ){
+    end_time += 10;
     delta = end_time - start_time;
 
+
     if (delta >= nanoSecPerFrame){
-      nanoSecs += delta;
       { //Run a frame
-      getUserInput();
-      updateGameState();
-      render();
+        nanoSecs += delta;
+        getUserInput();
+        updateGameState();
+        render();
       }
       start_time = end_time;
       frames++;
@@ -40,10 +47,25 @@ void Game::run(){
     }
   }
 
+  quit();
+}
+
+void Game::quit(){
+  free(eventList);
+  cleanup();
+}
+void stopRunning(){
+  Game::isRunning = false;
 }
 
 void Game::getUserInput(){
-  //cout << "Inside getUserInput() function" << endl;
+
+}
+void Game::handleUserInput(){
+  for(int i = 0; i < EVENT_POLL_SIZE; i++){
+    if(eventList[i] == NULL) break;
+    if(eventList[i])
+  }
 }
 void Game::updateGameState(){
   //cout << "Inside updateGameState() function" << endl;
