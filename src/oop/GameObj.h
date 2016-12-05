@@ -10,6 +10,7 @@ using namespace std;
 class GameObject {
 public:
   GameObject();
+  void tick();
   void update();
   void render();
 };

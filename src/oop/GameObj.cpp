@@ -11,3 +11,7 @@ void GameObject::update(){
 void GameObject::render(){
 
 }
+
+void GameObject::tick(){
+
+}

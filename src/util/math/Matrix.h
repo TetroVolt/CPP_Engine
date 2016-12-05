@@ -14,7 +14,6 @@ public:
   bool validRow(unsigned int r){ return r < rows; }
   bool validCol(unsigned int c){ return c < cols; }
 
-
   float * getElement(unsigned int r, unsigned int c);
   void setElement(unsigned int r, unsigned int c, float val);
 };
