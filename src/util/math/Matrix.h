@@ -5,7 +5,7 @@
 
 class Matrix {
 private:
-  float * elements;
+  float ** elements;
   unsigned int rows, cols;
 public:
   Matrix(unsigned int r, unsigned int c);

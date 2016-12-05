@@ -6,12 +6,12 @@
 #define GAME_H
 
 #include <iostream>
-#include "SDL/SDL.h"
+#include "SDL.h"
 #include "KeyHandler.h"
 #include "Renderer.h"
 
 class Game {
-private:
+protected:
   bool isRunning = true;
   SDL_KeyboardEvent *eventList;
 public:

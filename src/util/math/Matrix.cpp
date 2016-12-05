@@ -4,9 +4,9 @@ Matrix::Matrix(unsigned int r, unsigned int c){
   if (r > 0 && c > 0){
     this->rows = r;
     this->rows = c;
-    elements = ;
+    elements = new float[][];
   } else {
-    //Maybe not this
+    //Maybe not this, kind of destructive
     free(this);
   }
 }
