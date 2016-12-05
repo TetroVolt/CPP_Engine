@@ -1,14 +1,40 @@
+#include <iostream>
 #define minsize 10
 
+
+
+using namespace std;
+
 class GameObj {
-private:
-  int age;
+protected:
+  bool Reffed;
 public:
   GameObj(){
-
+    cout << "GameObj being instantiated." << endl;
   }
-  int getNum(){
-    return age;
+  bool hasRef(){ return Reffed; }
+  void setRef(bool ref){ Reffed = ref; }
+
+  void tick(){}
+  void render(){}
+
+  ~GameObj(){
+    //Handle anything that needs to be destroyed
+    cout << "Game Object being deleted." << endl;
+  }
+};
+
+
+class Player: public GameObj {
+public:
+  Player(){
+    cout << "Player:GameObject being instantiated." << endl;
+  }
+  void tick(){}
+  void render(){}
+  void jump(){ cout << "Player jumps. "<< endl;}
+  ~Player(){
+    cout << "Player:GameObject being deleted." << endl;
   }
 };
 
@@ -81,6 +107,16 @@ public:
 
 
 int main(){
+  //On the heap
+  //GameObj * gameobj = new GameObj();
+  Player * player = new Player();
+  player->jump();
+  cout << player << endl;
+  free(player);
+  cout << player == NULL << endl;
 
+  //On the stack
+  //Player player;
+  //player.jump();
   return 0;
 }
