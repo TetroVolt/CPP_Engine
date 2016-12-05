@@ -1,3 +1,10 @@
+/**
+This program tests the size of classes and subclasses
+along with size of the instantiated objects respectively.
+
+*/
+
+
 #include <iostream>
 
 using namespace std;
