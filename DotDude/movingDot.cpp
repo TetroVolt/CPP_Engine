@@ -1,4 +1,4 @@
-#include "SDL/SDL.h"
+#include "SDL/SDL2/SDL.h"
 #include <string>
 #include <iostream>
 

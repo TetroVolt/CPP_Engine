@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <iostream>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 
 
 class GameObj {

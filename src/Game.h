@@ -6,7 +6,7 @@
 #define GAME_H
 
 #include <iostream>
-#include "SDL.h"
+#include "SDL2/SDL.h"
 #include "KeyHandler.h"
 #include "Renderer.h"
 
