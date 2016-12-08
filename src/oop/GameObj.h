@@ -8,15 +8,16 @@
 
 class GameObj {
 protected:
-  bool Reffed;
+  bool Reffed = true;
+  unsigned int ID_NUM;
 public:
-  GameObj();
+  GameObj(unsigned int ID);
   ~GameObj();
   bool hasRef();
-  void setRef(bool ref);
-  void tick();
-  void update();
-  void render();
+  void deRef();
+  virtual void tick() const = 0;
+  virtual void update() const = 0;
+  virtual void render() const = 0;
 };
 
 #endif

@@ -126,6 +126,7 @@ public:
 int main(){
   //On the heap
   //GameObj * gameobj = new GameObj();
+
   Player * player = new Player();
   player->jump();
   cout << player << endl;

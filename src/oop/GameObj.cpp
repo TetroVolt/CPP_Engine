@@ -1,35 +1,18 @@
 
 #include "GameObj.h"
 
-
-//GameObj Constructor
-GameObj::GameObj(){
-  std::cout << "GameObj::GameObj() being constructed." << std::endl;
+GameObj::GameObj(int ID) {
+  ID_NUM = ID;
 }
 
-//GameObj Destructor
-GameObj::~GameObj(){
-  std::cout << "GameObj::~GameObj() being destructed." << std::endl;
+GameObj::~GameObj() {
+  
 }
 
-bool GameObj::hasRef(){
-  std::cout << "Inside GameObj::hasRef()" << std::endl;
+GameObj::bool hasRef() {
   return Reffed;
 }
 
-void GameObj::setRef(bool ref){
-  std::cout << "Inside GameObj::setRef(bool Ref)" << std::endl;
-  Reffed = ref;
-}
-
-void GameObj::tick(){
-  std::cout << "Inside GameObj::tick()" << std::endl;
-}
-
-void GameObj::update(){
-  std::cout << "Inside GameObj::update()" << std::endl;
-}
-
-void GameObj::render(){
-  std::cout << "Inside GameObj::render()" << std::endl;
+GameObj::void deRef(bool ref) {
+  Reffed = false;
 }
