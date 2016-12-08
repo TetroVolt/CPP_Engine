@@ -45,39 +45,46 @@ int Employee::getSalary(){
 }
 
 int main(){
-Person * p = new Person(5);
-Person * e = new Employee(7, 50000);
+/*
+    Person * p = new Person(5);
+    Person * e = new Employee(7, 50000);
 
 
 
-cout
-<< "sizeof(Person):"
-<< sizeof(Person)
-<< "\n"
-<< "sizeof(Employee):"
-<< sizeof(Employee)
-<< "\n"
-<< "sizeof(*p):"
-<< sizeof(*p)
-<< "\n"
-<< "sizeof(p):"
-<< sizeof(p)
-<< "\n\n";
+    cout
+    << "sizeof(Person):"
+    << sizeof(Person)
+    << "\n"
+    << "sizeof(Employee):"
+    << sizeof(Employee)
+    << "\n"
+    << "sizeof(*p):"
+    << sizeof(*p)
+    << "\n"
+    << "sizeof(p):"
+    << sizeof(p)
+    << "\n\n";
 
-cout
-<< "sizeof(e):"
-<< sizeof(e)
-<< "\n"
-<< "sizeof(*e):"
-<< sizeof(*e)
-<< "\n"
-<< "sizeof((Employee*)e):"
-<< sizeof((Employee*)e)
-<< endl
-<< "sizeof(*(Employee*)e):"
-<< sizeof(*(Employee*)e)
-<< endl;
+    cout
+    << "sizeof(e):"
+    << sizeof(e)
+    << "\n"
+    << "sizeof(*e):"
+    << sizeof(*e)
+    << "\n"
+    << "sizeof((Employee*)e):"
+    << sizeof((Employee*)e)
+    << endl
+    << "sizeof(*(Employee*)e):"
+    << sizeof(*(Employee*)e)
+    << endl;
+*/
+  int *arr = (int*)malloc(sizeof(int) * 10);
+  void *arr2 = malloc(sizeof(int) * 10);
+  
 
+  free(arr);
+  free(arr2);
 
 return 0;
 }

@@ -1,7 +1,7 @@
 #include <iostream>
 
-#include "src/oop/GameObj.h"
-#include "src/oop/GameObj.cpp"
+#include "GameObj.h"
+#include "GameObj.cpp"
 
 #define minsize 10
 
@@ -34,17 +34,7 @@ private:
   //size of each individuap heal for easy access
    unsigned int heap1Size, heap2Size, heap3Size;
 
-  /*void doubleSize(){
-    long unsigned int * OBJ2 = ;
-    for (int i = 0; i < actualsize; ++i){
-      (OBJ2 + i)->(OBJ + i);
-    }
-    for (int i = 0; i < actualsize; ++i){
-      free(OBJ + i);
-    }
-    actualsize *= 2;
-  }
-  */
+
   //true if the first heap is full, usually called before migrating from the
   //  first heap to the second heap
   bool heap1Full(){
@@ -112,11 +102,19 @@ public:
     }
     GameObj *temp = heap1;
     int count = 0;
-    while(temp != NULL){
+    while(*temp != NULL){
       temp++;
       count++;
     }
     heap1[count] = inObj;
+  }
+
+  //printf contents of heap1
+  void printHeap1(){
+    printf("Printing.\n");
+    for(unsigned int i = 0; i < heap1Size;i++)
+      cout << &heap1[i] << endl;
+    printf("\n");
   }
 
 };
@@ -126,12 +124,21 @@ public:
 int main(){
   //On the heap
   //GameObj * gameobj = new GameObj();
+  RKGC *gc = new RKGC(5,10,25);
+  printf("\n\n");
+  /*
   Player * player = new Player();
   player->jump();
   cout << player << endl;
   free(player);
   cout << (player == NULL) << endl;
+  */
+  //GameObj *bob = new GameObj();
+//  gc->create(* new GameObj());
+//  gc->printHeap1();
 
+  GameObj *bob;
+  cout << *bob ==NULL << endl;
   //On the stack
   //Player player;
   //player.jump();
