@@ -5,7 +5,6 @@
 #include <iostream>
 #include "SDL2/SDL.h"
 
-
 class GameObj {
 protected:
   bool Reffed;
