@@ -1,21 +1,22 @@
 #ifndef GAMEOBJ_H
 #define GAMEOBJ_H
 
-#include <stdio.h>
 #include <iostream>
 #include "SDL2/SDL.h"
 
+typedef int GameObj_TYPE;
+
 class GameObj {
-protected:
-  bool Reffed;
+private:
+  GameObj_TYPE type;
 public:
-  GameObj();
+  GameObj(int type);
   ~GameObj();
-  bool hasRef();
-  void setRef(bool ref);
+
   void tick();
   void update();
   void render();
+  GameObj_TYPE getType();
 };
 
 #endif

@@ -7,13 +7,10 @@
 
 #include <iostream>
 #include "SDL2/SDL.h"
-#include "KeyHandler.h"
-#include "Renderer.h"
 
 class Game {
 protected:
   bool isRunning = true;
-  SDL_KeyboardEvent *eventList;
 public:
   Game();
   void run();
