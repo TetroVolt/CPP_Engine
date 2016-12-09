@@ -1,6 +1,6 @@
 
 #include "GameObjLinkedList.h"
-#include <string>
+//#include <string>
 
 using namespace std;
 
@@ -84,7 +84,22 @@ bool GameObjLinkedList::delGameObjNode(unsigned int ID) {
   return true;
 }
 
+bool GameObjLinkedList::purgeAll() {
+  if (head == NULL) return false;
 
+  GameObjLinkedListNode * curr = head;
+  while (curr->next != NULL) {
+    head = head->next;
+    delete curr;
+    curr = head;
+  }
+  delete curr;
+
+  return true;
+}
+
+/*
+//For ctrl shift b  testing purposes, comment out later
 
 class Playerchar : public GameObj {
 string name;
@@ -99,7 +114,6 @@ public:
     std::cout << "Playerchar being deleted." << std::endl;
   }
 };
-//For ctrl shift b  testing purposes, comment out later
 
 int main(){
   std::cout << "\nLinkedList Test:\n" << std::endl;
@@ -155,3 +169,5 @@ int main(){
   }
 
 }
+
+*/

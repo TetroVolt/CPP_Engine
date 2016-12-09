@@ -13,21 +13,16 @@ GameObj::~GameObj() { //might be better not to make our own
 
 void GameObj::tick() {
   std::cout << "Inside GameObj::tick()" << std::endl;
-
 }
 
 void GameObj::update() {
   std::cout << "Inside GameObj::update()" << std::endl;
-
 }
 
 void GameObj::render() {
   std::cout << "Inside GameObj:;render()" << std::endl;
-
 }
 
 GameObj_TYPE GameObj::getType(){
   return type;
 }
-//For ctrl shift b purposes
-//int main(){}

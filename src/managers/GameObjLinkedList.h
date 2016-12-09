@@ -2,28 +2,24 @@
 #define GAMEOBJLINKEDLIST_H
 
 #include "../oop/GameObj.h"
-#include "../oop/GameObj.cpp" //Remove this later, maybe...
-#include <typeinfo>
 
 class GameObjLinkedListNode {
 public:
-  GameObjLinkedListNode * next = NULL;
-
   const unsigned int ID_NUM;
   GameObj * gameObj = NULL;
+  GameObjLinkedListNode * next = NULL;
 
   GameObjLinkedListNode(unsigned int ID, GameObj * gameObj) : ID_NUM(ID){
-
     this->gameObj = gameObj;
   }
   //~GameObjLinkedListNode(){}
 };
 
 class GameObjLinkedList {
+private:
   GameObjLinkedListNode * head = NULL;
 public:
   GameObjLinkedList();
-
   /*
     finds GameObjLinkedListNode with matching ID,
     assigns previous node of found node to PREV,
@@ -57,6 +53,7 @@ public:
   */
   bool delGameObjNode(unsigned int ID);
 
+  bool purgeAll();
   //~GameObjLinkedList(){}
 };
 

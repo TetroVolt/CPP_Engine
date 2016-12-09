@@ -12,7 +12,7 @@ Game::Game(){
 
 void Game::setup(){
   cout << "Setting up" << endl;
-  Game::eventList = new SDL_KeyboardEvent[EVENT_POLL_SIZE];
+  //Game::eventList = new SDL_KeyboardEvent[EVENT_POLL_SIZE];
 }
 
 //Run function
@@ -50,8 +50,7 @@ void Game::run(){
 }
 
 void Game::quit(){
-  free(eventList);
-  cleanup();
+  
 }
 void Game::stopRunning(){
   Game::isRunning = false;
@@ -62,10 +61,7 @@ void Game::getUserInput(){
 }
 
 void Game::handleUserInput(){
-  for(int i = 0; i < EVENT_POLL_SIZE; i++){
-    if(eventList[i] == NULL) break;
-    if(eventList[i])
-  }
+
 }
 void Game::updateGameState(){
   //cout << "Inside updateGameState() function" << endl;

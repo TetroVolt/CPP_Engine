@@ -1,7 +1,6 @@
 #ifndef GAMEOBJ_H
 #define GAMEOBJ_H
 
-
 #include <iostream>
 #include "SDL2/SDL.h"
 typedef int GameObj_TYPE;
