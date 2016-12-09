@@ -27,7 +27,6 @@ void Game::run(){
     end_time += 10;
     delta = end_time - start_time;
 
-
     if (delta >= nanoSecPerFrame){
       { //Run a frame
         nanoSecs += delta;
@@ -50,7 +49,7 @@ void Game::run(){
 }
 
 void Game::quit(){
-  
+
 }
 void Game::stopRunning(){
   Game::isRunning = false;

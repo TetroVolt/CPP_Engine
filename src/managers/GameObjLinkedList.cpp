@@ -1,6 +1,5 @@
 
 #include "GameObjLinkedList.h"
-//#include <string>
 
 using namespace std;
 
@@ -97,77 +96,3 @@ bool GameObjLinkedList::purgeAll() {
 
   return true;
 }
-
-/*
-//For ctrl shift b  testing purposes, comment out later
-
-class Playerchar : public GameObj {
-string name;
-public:
-  Playerchar(string name, int type) : GameObj(type) {
-    this->name = name;
-  }
-  string getName(){
-    return name;
-  }
-  ~Playerchar(){
-    std::cout << "Playerchar being deleted." << std::endl;
-  }
-};
-
-int main(){
-  std::cout << "\nLinkedList Test:\n" << std::endl;
-  GameObjLinkedList * myList = new GameObjLinkedList();
-
-
-  string names[] = {"John", "Harry", "Jacob"};
-
-  Playerchar * currPlayer = NULL;
-
-  for (unsigned int i = 0; i < 3; ++i) {
-    currPlayer = new Playerchar(names[i], 1);
-    myList->set(i, currPlayer);
-    std::cout << "===============================\n" << std::endl;
-    std::cout << "Added Player: " << currPlayer->getName() << std::endl;
-  }
-
-  std::cout << "\n\\===================\\\n" << std::endl;
-  std::cout << "Find Tests: \n" << std::endl;
-
-  currPlayer = NULL;
-  GameObjLinkedListNode * searched;
-  for (unsigned int i = 0; i < 4; ++i) {
-    searched = myList->find(i);
-    if (searched != NULL) {
-      currPlayer = (Playerchar *)(searched->gameObj);
-      std::cout << "myList->find(" << i << ") :=> " << currPlayer->getName() << std::endl;
-    }
-  }
-
-
-  std::cout << "\n===========\nDelete tests:\n" << std::endl;
-
-  currPlayer = NULL;
-  for (unsigned int i = 0; i < 4; ++i) {
-    searched = myList->find(i);
-    if (searched != NULL) {
-      std::cout << "myList->delGameObjNode(" << i << ") => " << (bool)(myList->delGameObjNode(i)) << myList<< std::endl;
-    }
-  }
-
-  std::cout << "\n\\===================\\\n" << std::endl;
-  std::cout << "Find Tests 2: \n" << std::endl;
-
-  currPlayer = NULL;
-  searched = NULL;
-  for (unsigned int i = 0; i < 4; ++i) {
-    searched = myList->find(i);
-    if (searched != NULL) {
-      currPlayer = (Playerchar *)(searched->gameObj);
-      std::cout << "myList->find(" << i << ") :=> " << currPlayer->getName() << std::endl;
-    }
-  }
-
-}
-
-*/
