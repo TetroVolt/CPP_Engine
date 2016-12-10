@@ -6,13 +6,19 @@
 #clean:
 #	$(RM) program
 
-all: program
+all: 
 
 program: compileall
 	g++ -W -Wall -lSDL2 `sdl2-config --cflags --libs`  -O0 -pedantic -std=c++11 -o ./out/program *.o
 
-compileall:
+compileall: 
 	g++ -W -Wall -lSDL2 `sdl2-config --cflags --libs`  -O0 -pedantic -std=c++11 -c `find src -name '*.cpp'`
 
 clean:
 	rm -rf *.o
+
+run:
+	echo "Running Program: "	
+	./out/program
+
+buildnrun: program clean run
