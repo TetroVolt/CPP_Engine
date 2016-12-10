@@ -8,6 +8,7 @@ typedef int GameObj_TYPE;
 class GameObj {
 private:
   GameObj_TYPE type;
+  bool visable = true;
 public:
   GameObj(int type);
   ~GameObj();
@@ -15,6 +16,8 @@ public:
   void tick();
   void update();
   void render();
+  void setVisable(bool in);
+  bool isVisable();
   GameObj_TYPE getType();
 };
 

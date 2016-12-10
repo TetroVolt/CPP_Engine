@@ -21,7 +21,21 @@ void GameObj::update() {
 
 void GameObj::render() {
   std::cout << "Inside GameObj:;render()" << std::endl;
+  if(!visable)return;
+
+
+
+
 }
+
+//Get and set methods for visable bool
+void setVisable(bool in){
+  visable = in;
+}
+bool isVisable(){
+  return visable;
+}
+
 
 GameObj_TYPE GameObj::getType(){
   return type;
