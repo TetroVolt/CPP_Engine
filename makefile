@@ -1,14 +1,12 @@
 # build an executable named program from source files
 
-#all: program
-#	g++ -W -Wall -lSDL2 `sdl2-config --cflags --libs`  -O0 -pedantic -std=c++11 -o ./out/program `find src -name '*.cpp'`
-
-#clean:
-#	$(RM) program
-
 all: 
 
-program: compileall
+#makes the program without warnings
+program:
+	g++ -lSDL2 `sdl2-config --cflags --libs` -std=c++11 -o ./out/program *.o	
+	
+build: compileall
 	g++ -W -Wall -lSDL2 `sdl2-config --cflags --libs`  -O0 -pedantic -std=c++11 -o ./out/program *.o
 
 compileall: 
@@ -21,4 +19,8 @@ run:
 	echo "Running Program: "	
 	./out/program
 
-buildnrun: program clean run
+buildnclean: build clean
+
+buildnrun: buildnclean run
+
+
