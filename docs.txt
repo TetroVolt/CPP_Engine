@@ -3,3 +3,4 @@ Additions:
 Render commit 1=================================================================
   *Added visable bool to GameObj (used in rendering) and get method
   *Rectangle class created for rendering purposes (inherits from gameObk)
+    *both gameObj and rectangle have position and size public structs
