@@ -1,6 +1,6 @@
 # build an executable named program from source files
 
-all: 
+all: buildnrun
 
 #makes the program without warnings
 program:
@@ -16,7 +16,6 @@ clean:
 	rm -rf *.o
 
 run:
-	echo "Running Program: "	
 	./out/program
 
 buildnclean: build clean

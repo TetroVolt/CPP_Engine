@@ -1,11 +1,11 @@
 #ifndef GAMEOBJDEFINTIONS_H
 #define GAMEOBJDEFINTIONS_H
 
-//#include <iostream>
+#include "SDL2/SDL.h"
 
 class Renderable { //Renderable interface
 public:
-  virtual void render(/*Ideally pass a painter param*/) = 0;
+  virtual void render(SDL_Surface * screen) = 0;
 };
 
 class Updateable { //Updateable interface
@@ -19,8 +19,7 @@ class GameObj : public Renderable, public Updateable {
 public:
   GameObj();
   //~GameObj();
-  void render(/*Ideally pass a painter param*/) { }
-  void tick() { }
+  void render(SDL_Surface * screen) { }
   void update() { }
 };
 
