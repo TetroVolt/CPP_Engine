@@ -9,6 +9,12 @@ public:
   virtual bool getBool() = 0;
 };
 
+/*
+class Hashable {
+public:
+  virtual unsigned long  hashCode() = 0;
+}
+*/
 class myObj : public myInterface {
 public:
   myObj(){}
@@ -18,6 +24,8 @@ public:
   bool getBool() {
     return mybool;
   }
+
+  //unsigned long int hashCode() { return this; }
 };
 
 int main(){
@@ -26,4 +34,8 @@ int main(){
   myobj.setBool(true);
   std::cout << "myobj.setBool(true)" << std::endl;
   std::cout << "myobj.getBool() : " << myobj.getBool() << std::endl;
+
+
+  std::cout << "\nStorage size for long : " << sizeof(long) << std::endl;
+
 }

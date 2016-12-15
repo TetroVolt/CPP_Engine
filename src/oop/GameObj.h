@@ -6,7 +6,7 @@
 typedef int GameObj_TYPE;
 
 class GameObj {
-private:
+protected:
   GameObj_TYPE type;
   bool visable = true;
 public:

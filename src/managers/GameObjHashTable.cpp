@@ -19,7 +19,9 @@ GameObjHashTable::GameObjHashTable() {
 /*
   simply hashes index based on modulus of ID number and size of LinkedList array
 */
-int GameObjHashTable::hash(unsigned int ID){
+int GameObjHashTable::hash(unsigned int ID) {
+  //return ID & (HASH_TABLE_SIZE - 1);
+
   return ID % HASH_TABLE_SIZE;
 }
 

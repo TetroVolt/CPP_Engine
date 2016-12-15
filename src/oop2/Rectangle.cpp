@@ -1,5 +1,5 @@
-#include "src/oop2/GameObjDefinitions.h"
-#include "SDL/SDL.h"
+#include "GameObjDefinitions.h"
+#include "SDL2/SDL.h"
 
 
 using namespace std;
@@ -10,24 +10,23 @@ typedef struct {
 
 
 
-
 class Rectangle: public GameObj{
-  private:
-    position p;
-    bool isVisable = false;
-  public:
-    Rectangle(int xpos, int ypos) : GameObj() {
-      p.x = xpos;
-      p.y = ypos;
-    }
+private:
+  position p;
+public:
+  Rectangle(int xpos, int ypos) : GameObj() {
+    p.x = xpos;
+    p.y = ypos;
+  }
 
-    void render(SDL_Surface * screen){
-      if(!isVisable())return;
-      //Render here
-    }
-
+  void render(SDL_Surface * screen){
+    if (! this->visable) return;
+    //Render here
+  }
 };
 
+/*
 int main(){
   return 0;
 }
+*/
