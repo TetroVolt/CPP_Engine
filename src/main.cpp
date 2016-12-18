@@ -42,7 +42,7 @@ void test(){
     }
   }
 
-  std::cout << "|========= Deleting for Players =========|" << std::endl;
+  std::cout << "|========= Deleting for Players  =========|" << std::endl;
   curr = NULL;
   for (int i = 0; i < LEN; ++i) {
     hashtable->delGameObj(IDS[i]);
