@@ -1,18 +1,8 @@
 # build an executable named program from source files
-# Commands:
-# all: buildnrun
-# program:
-# build: compileall
-# compileall:
-# clean:
-# run:
-# buildnclean: build clean
-# buildnrun: buildnclean run
 
 
 all: buildnrun
 
-#makes the program without warnings
 program:
 	g++ -lSDL2 `sdl2-config --cflags --libs` -std=c++11 -o ./out/program *.o	
 	
@@ -32,5 +22,4 @@ run:
 buildnclean: build clean
 
 buildnrun: buildnclean run
-
 
